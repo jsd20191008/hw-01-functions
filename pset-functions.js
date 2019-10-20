@@ -31,6 +31,31 @@ console.log('Problem 1:')
 
 // Add your code below this line
 
+function blackJack(playerCardScore, dealerCardScore) {
+  const cards = [playerCardScore, dealerCardScore]
+  const less21 = cards.filter(cards => {
+                    return cards <= 21
+                  })
+  const max = Math.max(...less21)
+
+  let result = ""
+
+  if (less21 === undefined || less21.length == 0) {
+    result = 0
+  } else {
+    result = max
+  }
+
+
+  console.log(result);
+
+}
+
+blackJack(19, 21)
+blackJack(22, 22)
+blackJack(19, 22)
+blackJack(21, 21)
+
 // Add your code above this line
 
 /** added for formatting purposes **/
@@ -91,6 +116,30 @@ console.log('Problem 2:')
 
 // Add your code below this line
 
+function wordCount(phrase) {
+  const array = phrase.split(" ").map(x => x.replace(/,/g,''))
+  const uniqueValues = [...new Set(array)]
+  const result = {}
+
+  for (let i = 0; i < uniqueValues.length; i++) {
+    let matched = 0
+      for(let z = 0; z < array.length; z++){
+          if(array[z] == uniqueValues[i])
+              matched++;
+      }
+
+    result[uniqueValues[i]] = matched
+
+  }
+
+  console.log(result)
+}
+
+wordCount("olly olly in come free")
+wordCount("Baby shark, doo doo doo doo doo doo")
+wordCount("Humpty Dumpty sat on a wall Humpty Dumpty had a great fall")
+
+
 // Add your code above this line
 
 /** added for formatting purposes **/
@@ -136,6 +185,52 @@ console.log('Problem 3:')
 
 // Add your code below this line
 
+const scoreTable = {
+      a: 1,
+      b: 3,
+      c: 3,
+      d: 2,
+      e: 1,
+      f: 4,
+      g: 2,
+      h: 4,
+      i: 1,
+      j: 8,
+      k: 5,
+      l: 1,
+      m: 3,
+      n: 1,
+      o: 1,
+      p: 3,
+      q: 10,
+      r: 1,
+      s: 1,
+      t: 1,
+      u: 1,
+      v: 4,
+      w: 4,
+      x: 8,
+      y: 4,
+      z: 10
+}
+
+function scrabbleScore(word) {
+  let score = 0
+  let letters = word.split('')
+
+  letters.forEach(function(letter) {
+      score += scoreTable[letter]
+    }
+  )
+  console.log(score)
+}
+
+scrabbleScore("cabbage")
+scrabbleScore("javascript")
+scrabbleScore("function")
+
+
+
 // Add your code above this line
 
 /** added for formatting purposes **/
@@ -175,6 +270,17 @@ console.log('Problem 4:')
 
 // Add your code below this line
 
+function isPalindrome(word) {
+  const reverse = word.split("").reverse().join("")
+
+  console.log(word === reverse);
+}
+
+isPalindrome("noon")
+isPalindrome("racecar")
+isPalindrome("moon")
+isPalindrome("run")
+
 // Add your code above this line
 
 /** added for formatting purposes **/
@@ -207,6 +313,22 @@ Use the following test cases to confirm your program meets the success criteria
 console.log('Problem 5:')
 
 // Add your code below this line
+
+function doubleLetters(word) {
+  const characters = word.split("")
+  let count = 0
+
+  for(let i = 0; i < characters.length; i++){
+      if(characters[i] == characters[i+1])
+          count++;
+  }
+  
+  console.log(count > 0)
+}
+
+doubleLetters("loop")
+doubleLetters("rune")
+doubleLetters("apple")
 
 // Add your code above this line
 
