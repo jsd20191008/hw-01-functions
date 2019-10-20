@@ -30,7 +30,26 @@ Use the following test cases to confirm your program meets the success criteria
 console.log('Problem 1:')
 
 // Add your code below this line
+function blackJack(playerCardScore, dealerCardScore){
+  if (playerCardScore <= 21 && dealerCardScore <= 21 && playerCardScore < dealerCardScore){
+    return dealerCardScore;
+  } else if (playerCardScore <= 21 && dealerCardScore <= 21 && playerCardScore > dealerCardScore){
+    return playerCardScore;
+  } else if (playerCardScore <= 21 || dealerCardScore <= 21){
+    if (playerCardScore <= 21){
+      return playerCardScore
+    } if (dealerCardScore <= 21){
+      return dealerCardScore
+    }
+  } else {
+    return 0
+  }
+}
 
+console.log(blackJack(19,21))
+console.log(blackJack(22,22))
+console.log(blackJack(19,22))
+console.log(blackJack(21,21))
 // Add your code above this line
 
 /** added for formatting purposes **/
