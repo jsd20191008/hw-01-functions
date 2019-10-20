@@ -130,6 +130,8 @@ function wordCount(phrase){
 }
 
 console.log(wordCount('olly olly in come free'))
+console.log(wordCount('Baby shark, doo doo doo doo doo doo'))
+console.log(wordCount('Humpty Dumpty sat on a wall Humpty Dumpty had a great fall'))
 
 
 // Add your code above this line
