@@ -110,6 +110,28 @@ console.log('Problem 2:')
 
 // Add your code below this line
 
+/*function wordCount(phrase) {
+    const wordArray = phrase.split(' ');
+    const count = 0;
+    for (var i = 0; i < wordArray.length; i++) {
+        if (wordArray[i] === phrase) {
+            count++;
+        }
+    }
+    return(wordArray + ':' + count)
+}
+
+console.log(wordCount('olly olly in come free'))*/
+function wordCount(phrase){
+  const wordsExplained = phrase.split(' ').forEach(function(word){
+  const numberofTimes = phrase.match(new RegExp(word, 'g')).length;
+  console.log(`${word}: ${numberofTimes}`)
+})
+}
+
+console.log(wordCount('olly olly in come free'))
+
+
 // Add your code above this line
 
 /** added for formatting purposes **/
