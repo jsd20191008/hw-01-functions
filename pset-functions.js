@@ -229,7 +229,22 @@ Use the following test cases to confirm your program meets the success criteria
 console.log('Problem 4:')
 
 // Add your code below this line
+function isPalindrome(word){
+  const wordSplit = word.split("");
+  const wordReverse = wordSplit.reverse();
+  const wordJoin = wordReverse.join("");
 
+
+  if (word === wordJoin){
+    console.log ('Expected Result: true');
+  } else {console.log ('Expected Result: false')};
+
+}
+
+console.log(isPalindrome("noon"));
+console.log(isPalindrome("racecar"));
+console.log(isPalindrome("moon"));
+console.log(isPalindrome("run"));
 // Add your code above this line
 
 /** added for formatting purposes **/
