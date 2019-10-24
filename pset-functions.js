@@ -31,6 +31,12 @@ console.log('Problem 1:')
 
 // Add your code below this line
 
+function blackJack () {
+  console.log('I think it works???')
+}
+
+blackJack()
+
 // Add your code above this line
 
 /** added for formatting purposes **/
