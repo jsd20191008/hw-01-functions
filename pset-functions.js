@@ -30,7 +30,26 @@ Use the following test cases to confirm your program meets the success criteria
 console.log('Problem 1:')
 
 // Add your code below this line
+function blackJack(playerCardScore, dealerCardScore){
+  if (playerCardScore <= 21 && dealerCardScore <= 21 && playerCardScore < dealerCardScore){
+    return dealerCardScore;
+  } else if (playerCardScore <= 21 && dealerCardScore <= 21 && playerCardScore > dealerCardScore){
+    return playerCardScore;
+  } else if (playerCardScore <= 21 || dealerCardScore <= 21){
+    if (playerCardScore <= 21){
+      return playerCardScore
+    } if (dealerCardScore <= 21){
+      return dealerCardScore
+    }
+  } else {
+    return 0
+  }
+}
 
+console.log(blackJack(19,21))
+console.log(blackJack(22,22))
+console.log(blackJack(19,22))
+console.log(blackJack(21,21))
 // Add your code above this line
 
 /** added for formatting purposes **/
@@ -91,6 +110,30 @@ console.log('Problem 2:')
 
 // Add your code below this line
 
+/*function wordCount(phrase) {
+    const wordArray = phrase.split(' ');
+    const count = 0;
+    for (var i = 0; i < wordArray.length; i++) {
+        if (wordArray[i] === phrase) {
+            count++;
+        }
+    }
+    return(wordArray + ':' + count)
+}
+
+console.log(wordCount('olly olly in come free'))*/
+function wordCount(phrase){
+  const wordsExplained = phrase.split(' ').forEach(function(word){
+  const numberofTimes = phrase.match(new RegExp(word, 'g')).length;
+  console.log(`${word}: ${numberofTimes}`)
+})
+}
+
+console.log(wordCount('olly olly in come free'))
+console.log(wordCount('Baby shark, doo doo doo doo doo doo'))
+console.log(wordCount('Humpty Dumpty sat on a wall Humpty Dumpty had a great fall'))
+
+
 // Add your code above this line
 
 /** added for formatting purposes **/
@@ -135,7 +178,19 @@ Use the following test cases to confirm your program meets the success criteria
 console.log('Problem 3:')
 
 // Add your code below this line
+function scrabbleScore(word){
+scrabbleLegend = {a:1, e:1, i:1, o:1, u:1, l:1, n:1, r:1, s:1, t:1, d:2, g:2, b:3, c:3, m:3, p:3, f:4, h:4, v:4, w:4, y:4, k:5, j:8, x:6, q:10, z:10}
+let scrabbleSum = 0;
+for (let i = 0; i < word.length; i++) {
+  scrabbleSum += scrabbleLegend[word.charAt(i)] || 0;
+}
+return scrabbleSum;
+console.log(`Expected Result: ${scrabbleSum}`)
+}
 
+console.log(scrabbleScore("cabbage"));
+console.log(scrabbleScore("javascript"));
+console.log(scrabbleScore("function"));
 // Add your code above this line
 
 /** added for formatting purposes **/
@@ -174,7 +229,22 @@ Use the following test cases to confirm your program meets the success criteria
 console.log('Problem 4:')
 
 // Add your code below this line
+function isPalindrome(word){
+  const wordSplit = word.split("");
+  const wordReverse = wordSplit.reverse();
+  const wordJoin = wordReverse.join("");
 
+
+  if (word === wordJoin){
+    console.log ('Expected Result: true');
+  } else {console.log ('Expected Result: false')};
+
+}
+
+console.log(isPalindrome("noon"));
+console.log(isPalindrome("racecar"));
+console.log(isPalindrome("moon"));
+console.log(isPalindrome("run"));
 // Add your code above this line
 
 /** added for formatting purposes **/
@@ -207,6 +277,19 @@ Use the following test cases to confirm your program meets the success criteria
 console.log('Problem 5:')
 
 // Add your code below this line
+function doubleLettersCheck(word){
+  const splitWords = word.split("");
+  for (let i = 0; i < splitWords.length; i++){
+    if(splitWords[i] === splitWords[i + 1]){
+    console.log("true")} else{ console.log("false");}
+};
+};
+console.log(doubleLettersCheck("loop"));
+console.log(doubleLettersCheck("rune"));
+console.log(doubleLettersCheck("apple"));
+
+
+
 
 // Add your code above this line
 
