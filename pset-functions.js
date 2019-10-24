@@ -30,7 +30,27 @@ Use the following test cases to confirm your program meets the success criteria
 console.log('Problem 1:')
 
 // Add your code below this line
+//let playerCardScore = 22
+//let dealerCardScore = 22
+function blackJack(playerCardScore, dealerCardScore) {
+  if (playerCardScore > 21 && dealerCardScore > 21) {
+      return 0
+  } else if (playerCardScore <= 21 && dealerCardScore <= 21) {
+      let arrayOne = [playerCardScore, dealerCardScore];
+      return Math.max(...arrayOne);
+  } else if (playerCardScore > 21 && dealerCardScore <= 21) {
+      return dealerCardScore;
+  } else if (playerCardScore <= 21 && dealerCardScore > 21) {
+      return playerCardScore;
+  } else {
+      return 'something is broken'
+  }
+}
 
+//console.log(playerCardScore = 22)
+//console.log(dealerCardScore = 22)
+const result = blackJack(22, 22)
+console.log(result)
 // Add your code above this line
 
 /** added for formatting purposes **/
@@ -90,7 +110,22 @@ Use the following test cases to confirm your program meets the success criteria
 console.log('Problem 2:')
 
 // Add your code below this line
+function wordCount(phrase) {
+  const words = phrase.split(' ');
+  const result = {}
+  //console.log(words)
 
+  words.forEach((word) => {
+    if (result[word] === undefined) {
+      result[word] = 1
+    } else {
+      result[word] = result[word] + 1
+    }
+  })
+  return result
+}
+
+console.log(wordCount("Humpty Dumpty sat on a wall Humpty Dumpty had a great fall"))
 // Add your code above this line
 
 /** added for formatting purposes **/
@@ -136,6 +171,86 @@ console.log('Problem 3:')
 
 // Add your code below this line
 
+function scrabbleScore(word) {
+  const letters = word.split('')
+  let counter = 0
+  for (let i = 0; i <= word.length; i++) {
+    if (letters[i] === 'a' || letters[i] === 'e' || letters[i] === 'i' || letters[i] === 'o' || letters[i] === 'u' || letters[i] === 'l' || letters[i] === 'n' || letters[i] === 'r' || letters[i] === 's' || letters[i] === 't') {
+    //console.log(1)
+    counter += 1
+    //console.log(counter)
+  } else if (letters[i] === 'd' || letters[i] === 'g') {
+    //console.log(2)
+    counter += 2
+    //console.log(counter)
+  } else if (letters[i] === 'b' || letters[i] === 'c' || letters[i] === 'm' || letters[i] === 'p') {
+    //console.log(3)
+    counter += 3
+    //console.log(counter)
+  } else if (letters[i] === 'f' || letters[i] === 'h' || letters[i] === 'v' || letters[i] === 'w' || letters[i] === 'y') {
+    //console.log(4)
+    counter += 4
+    //console.log(counter)
+  } else if (letters[i] === 'k') {
+    //console.log(5)
+    counter += 5
+    //console.log(counter)
+  } else if (letters[i] === 'j' || letters[i] === 'x') {
+    //console.log(8)
+    counter += 8
+    //console.log(counter)
+  } else if (letters[i] === 'q' || letters[i] === 'z') {
+    //console.log(10)
+    counter += 10
+    //console.log(counter)
+  }
+}
+console.log(`counter is ${counter}`)
+}
+
+scrabbleScore('javascript')
+//console.log(answer)
+
+//assigns scores to letters
+/*const letters = {
+    1: ['A', 'E', 'I', 'O', 'U', 'L', 'N', 'R', 'S', 'T'],
+    2: ['D', 'G'],
+    3: ['B', 'C', 'M', 'P'],
+    4: ['F', 'H', 'V', 'W', 'Y'],
+    5: ['K'],
+    8: ['J', 'X'],
+    10: ['Q', 'Z']
+}
+let sum
+// function to assign score to letter
+
+function assignScore(letter) {
+  for (var index in letters) {
+    if (Object.keys(letters).indexOf((letters[index].indexOf(letter) !== -1) ? index.toString() : '-1'))
+	    !== -1) {
+	    return parseInt(index);
+    }
+  }
+}
+
+function scrabbleScore(word) {
+    sum = 0;
+    if (word === null || word === "") {
+	return 0;
+    }
+
+    word.toUpperCase().split("").forEach(function(elem, word, array) {
+	sum += lettersToScore(elem);
+    });
+    return sum;
+
+console.log(assignScoredb v ('apple'))
+
+
+// function to calculate final score
+
+
+
 // Add your code above this line
 
 /** added for formatting purposes **/
@@ -175,6 +290,17 @@ console.log('Problem 4:')
 
 // Add your code below this line
 
+
+isPalindrome = (word) => {
+  //turn to all lowercase
+  word = word.toLocaleLowerCase();
+  // test for palindrome
+  return Array.from(word).toString() === Array.from(word).reverse().toString()
+}
+
+let word = 'racecar'
+console.log(isPalindrome(word))
+
 // Add your code above this line
 
 /** added for formatting purposes **/
@@ -208,6 +334,12 @@ console.log('Problem 5:')
 
 // Add your code below this line
 
+function checkForDuplicates(str) {
+  let repeats = /(.)\1/;
+  return repeats.test(str)
+}
+
+ console.log(checkForDuplicates('anine'))
 // Add your code above this line
 
 /** added for formatting purposes **/
