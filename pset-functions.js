@@ -277,6 +277,19 @@ Use the following test cases to confirm your program meets the success criteria
 console.log('Problem 5:')
 
 // Add your code below this line
+function doubleLettersCheck(word){
+  const splitWords = word.split("");
+  for (let i = 0; i < splitWords.length; i++){
+    if(splitWords[i] === splitWords[i + 1]){
+    console.log("true")} else{ console.log("false");}
+};
+};
+console.log(doubleLettersCheck("loop"));
+console.log(doubleLettersCheck("rune"));
+console.log(doubleLettersCheck("apple"));
+
+
+
 
 // Add your code above this line
 
