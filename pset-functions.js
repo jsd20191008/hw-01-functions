@@ -31,6 +31,31 @@ console.log('Problem 1:')
 
 // Add your code below this line
 
+//function blackJack(playerCardScore1,playerCardScore2)
+        //if (playerCardScore1 <= 21 || playerCardScore2 )
+
+
+    var blackJack = function (player1, player2) {
+    if (player1 > 21 && player2 >21)  {
+        return 0;
+    }
+    if (player2 >= 21 && player2 >= 21) {
+      return 21;
+    }
+    if (player1 < 21 && player2 < 21)
+    return player1;
+
+}
+
+console.log(blackJack(19,21));
+console.log(blackJack(22,22));
+console.log(blackJack(19,22));
+console.log(blackJack(21,21));
+
+
+
+
+
 // Add your code above this line
 
 /** added for formatting purposes **/
@@ -90,8 +115,26 @@ Use the following test cases to confirm your program meets the success criteria
 console.log('Problem 2:')
 
 // Add your code below this line
+function wordCount(phrase) {
+  const words = phrase.split('')
+  const numWords = {}
 
+  words.forEach((word) => {
+   //1 does this word already exsist in the result object, if it does not then add the lettr as a property
+   // and giv it a value of 1
+   //2 if letter already exsists in onj, then increment value by 1
+   if (numWords[word] === undefined) {
+     numWords[word]= 1
+   } else {
+     numWords[word] = numWords[word] + 1
+   }
+  })
+  return numWords
+
+}
+console.log(wordCount("olly olly in come free"))
 // Add your code above this line
+
 
 /** added for formatting purposes **/
 console.log('')
@@ -135,6 +178,23 @@ Use the following test cases to confirm your program meets the success criteria
 console.log('Problem 3:')
 
 // Add your code below this line
+function scrabbleScore(word) {
+  const term = word.split('')
+  const calcWords = {}
+
+  term.forEach((terms) => {
+   //1 does this word already exsist in the result object, if it does not then add the lettr as a property
+   // and giv it a value of 1
+   //2 if letter already exsists in onj, then increment value by 1
+   if (calcWords[term] === undefined) {
+     calcWords[term]= 1
+   } else {
+      calcWords[term] = calcWords[term] + 1
+   }
+  })
+  return calcWords
+}
+  console.log(scrabbleScore("cabbage"))
 
 // Add your code above this line
 
@@ -175,8 +235,21 @@ console.log('Problem 4:')
 
 // Add your code below this line
 
-// Add your code above this line
+function palindrome(str) {
 
+    var len = str.length;
+    var mid = Math.floor(len/2);
+
+    for ( var i = 0; i < mid; i++ ) {
+        if (str[i] !== str[len - 1 - i]) {
+            return false;
+        }
+    }
+
+    return true;
+}
+
+console.log(palindrome('noon'))
 /** added for formatting purposes **/
 console.log('')
 console.log('-----------------')
@@ -207,7 +280,18 @@ Use the following test cases to confirm your program meets the success criteria
 console.log('Problem 5:')
 
 // Add your code below this line
+const word = function(letter) {
+    for(var i = 0; i <= letter.length; i++) {
+        for(var j = i+1; j <= letter.length; j++) {
+            if(letter[j] == letter[i]) {
+                return true;
+            }
+        }
+    }
+    return false;
+}
 
+console.log(word('rune'))
 // Add your code above this line
 
 /** added for formatting purposes **/
