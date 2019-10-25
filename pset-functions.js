@@ -194,7 +194,7 @@ function scrabbleScore(word) {
   })
   return calcWords
 }
-  console.log(scrabbleScore("esther"))
+  console.log(scrabbleScore("cabbage"))
 
 // Add your code above this line
 
@@ -280,10 +280,10 @@ Use the following test cases to confirm your program meets the success criteria
 console.log('Problem 5:')
 
 // Add your code below this line
-const word = function(str) {
-    for(var i = 0; i <= str.length; i++) {
-        for(var j = i+1; j <= str.length; j++) {
-            if(str[j] == str[i]) {
+const word = function(letter) {
+    for(var i = 0; i <= letter.length; i++) {
+        for(var j = i+1; j <= letter.length; j++) {
+            if(letter[j] == letter[i]) {
                 return true;
             }
         }
@@ -291,7 +291,7 @@ const word = function(str) {
     return false;
 }
 
-console.log(word('loop'))
+console.log(word('rune'))
 // Add your code above this line
 
 /** added for formatting purposes **/
