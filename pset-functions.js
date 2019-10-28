@@ -33,6 +33,20 @@ console.log('Problem 1:')
 
 // Add your code above this line
 
+function blackJack(playerCardScore, dealerCardScore) {
+    const MAX = 21;
+    if(playerCardScore > MAX && dealerCardScore > MAX){
+        return 0;
+    } else {
+        if(playerCardScore >= playerCardScore && dealerCardScore <= MAX || dealerCardScore > MAX){
+            return playerCardScore;
+        } else {
+            return dealerCardScore;
+        }
+    }
+}
+const result =  blackJack(21, 21)
+console.log (result)
 /** added for formatting purposes **/
 console.log('')
 console.log('-----------------')
@@ -73,6 +87,7 @@ Use the following test cases to confirm your program meets the success criteria
    shark: 1
    doo: 6
 
+
 3. wordCount("Humpty Dumpty sat on a wall Humpty Dumpty had a great fall")
 
    Result:
@@ -90,6 +105,19 @@ Use the following test cases to confirm your program meets the success criteria
 console.log('Problem 2:')
 
 // Add your code below this line
+
+
+
+function wordCount(phrase){
+  let obj={};
+  phrase.split(" ").forEach(function(el,i,arr){
+    obj[el]=  obj[el]? ++obj[el]: 1;
+  });
+  return obj;
+}
+console.log(wordCount("olly olly in come free"));
+
+
 
 // Add your code above this line
 
@@ -136,7 +164,39 @@ console.log('Problem 3:')
 
 // Add your code below this line
 
+const word = "function"
+const scoreKey = {a: 1, b: 3, c: 3, d: 2, e: 1, f: 4, g: 2, h: 4, i: 1, j: 8, k: 5, l: 1, m: 3, n: 1, o: 1, p: 3, q: 10, r: 1, s: 1, t: 1, u: 1, v: 4, w: 4, x: 8, y: 4, z: 10}
+
+function scrabbleScore(word) {
+
+
+const wordArray = word.split ('')
+let score = 0
+
+wordArray.forEach(letter => {
+
+score = score + scoreKey[letter]
+});
+
+ return score
+
+}
+console.log(scrabbleScore("function"))
+
+  }
+
+
+
+const sum = [...word].reduce((accu, letter) => { return accu + scrabble[letter.toLowerCase()]; }, 0);
+
+}
+  return results
+
+}
+
+  console.log(scrabbleScore("cabbage"))
 // Add your code above this line
+
 
 /** added for formatting purposes **/
 console.log('')
@@ -207,6 +267,41 @@ Use the following test cases to confirm your program meets the success criteria
 console.log('Problem 5:')
 
 // Add your code below this line
+
+
+
+
+function doubleLetters(word) {
+ // split the word into an array of Letters
+
+ const letters = word.split('')
+ console.log(letters)
+
+ // loop through array of doubleLetters
+ //check if each letter is the same as the next letter
+ // in the sequence
+
+  let results = false
+
+ letters.forEach((letter, index) => {
+   // check if current letter is the same as the next letter
+   console.log(`letter: ${letter}`)
+   console.log(`index: ${index}`)
+
+   if (letter === letters[index + 1]) {
+     conole.log('we have a match')
+     result = true
+
+   }
+ })
+
+
+    return result
+  }
+
+  console.log(doubleLetters('rune'))
+
+
 
 // Add your code above this line
 
