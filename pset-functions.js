@@ -31,6 +31,28 @@ console.log('Problem 1:')
 
 // Add your code below this line
 
+
+function blackJack(playerCardScore,dealerCardScore){
+  if (playerCardScore <= 21 && playerCardScore > dealerCardScore){
+    return playerCardScore
+  }else if (dealerCardScore <= 21 && dealerCardScore > playerCardScore){
+    return dealerCardScore
+  }else if (playerCardScore <= 21 && dealerCardScore >21 ){
+     return playerCardScore
+  } else if (dealerCardScore <=21 && playerCardScore >21){
+     return dealerCardScore
+  }else if (dealerCardScore === playerCardScore){
+     return dealerCardScore
+  }else {
+    return 0
+  }
+  
+}
+
+const result = blackJack (22,22)
+
+console.log(result)
+
 // Add your code above this line
 
 /** added for formatting purposes **/
@@ -91,6 +113,24 @@ console.log('Problem 2:')
 
 // Add your code below this line
 
+function wordCount(phrase) {
+  const words = phrase.split(" ")
+  const occurrence = []
+
+ words.forEach((word) => {
+   if (occurrence[word] === undefined) {
+    occurrence[word] = 1
+  } else {
+    occurrence[word] = occurrence[word] + 1
+  }
+
+})
+  return occurrence
+ }
+
+ console.log(wordCount("olly olly in come free"))
+
+
 // Add your code above this line
 
 /** added for formatting purposes **/
@@ -100,7 +140,8 @@ console.log('-----------------')
 /***********
 Problem: Scrabble Scorer
 
-Create a function named `scrabbleScore()` that accepts a parameter called "word". The function should use the following table to calculate the Scrabble score of a provided word:
+Create a function named `scrabbleScore()` that accepts a parameter called "word". The function
+should use the following table to calculate the Scrabble score of a provided word:
 
 ```
 Letter                           Value
@@ -136,6 +177,43 @@ console.log('Problem 3:')
 
 // Add your code below this line
 
+function scrabbleScore(word){
+const letters = word.split("")
+const onePoint = ["a","e","i","o","u","l", "n", "r", "s", "t"] 
+const twoPoints = ["d","g"] 
+const threePoints = ["b","c","m","p"] 
+const fourPoints = ["f","h","v","w","y"] 
+const fivePoints = ["k"] 
+const eightPoints = ["j","x"] 
+const tenPoints = ["q","z"] 
+
+let finalScore = 0
+
+letters.forEach((letter) => {
+  if(onePoint.includes(letter)){
+    finalScore+=1
+  }else if (twoPoints.includes(letter)){
+    finalScore+=2
+  }else if (threePoints.includes(letter)){
+    finalScore+=3
+  }else if (fourPoints.includes(letter)){
+    finalScore+=4
+  }else if (fivePoints.includes(letter)){
+    finalScore+=5 
+  }else if (eightPoints.includes(letter)){
+    finalScore+=8
+  }else if (tenPoints.includes(letter)){
+    finalScore+=10
+  }
+})
+
+console.log(finalScore)
+}
+
+scrabbleScore("javascript")
+
+
+
 // Add your code above this line
 
 /** added for formatting purposes **/
@@ -147,7 +225,8 @@ Problem: Palindromes
 
 Palindromes are words which read the same forward as backwards. For example, "madam" and "noon" are both palindromes.
 
-Create a function named `isPalindrome()` that accepts a parameter called "word". The function will return true if the word is a palindrome and false if it is not.
+Create a function named `isPalindrome()` that accepts a parameter called "word". The function will return true 
+if the word is a palindrome and false if it is not.
 
 Feel free to add any additional functions or variables you deem necessary to meet the above requirements
 
@@ -175,6 +254,17 @@ console.log('Problem 4:')
 
 // Add your code below this line
 
+function isPalindrome(word){
+const reverseWord = word.split("").reverse().join("")
+console.log(reverseWord)
+
+if(word === reverseWord){
+  return true
+}else {
+return false}
+}
+
+console.log(isPalindrome("noon"))
 // Add your code above this line
 
 /** added for formatting purposes **/
@@ -207,6 +297,27 @@ Use the following test cases to confirm your program meets the success criteria
 console.log('Problem 5:')
 
 // Add your code below this line
+
+
+
+function doubleLetters(word){
+  const letters = word.split("")
+  console.log(letters)
+  
+  let result = false
+
+  letters.forEach((letter, index) => {
+    if (letter === letter[index ++]) {
+      result = true
+
+    }
+  })
+
+  return result
+}
+
+
+console.log(doubleLetters("loop"))
 
 // Add your code above this line
 
